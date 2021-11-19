@@ -1,8 +1,11 @@
+mod ptime;
+
 use std::io;
+use crate::ptime::ptime::PTime;
 
 fn main() {
-    let start_time = get_time("start".to_string());
-    let duration = get_time("print".to_string());
+    let start_time = PTime::get_ptime("start".to_string());
+    let duration = PTime::get_ptime("print".to_string());
     let end_time = compare_time(start_time, duration);
 
     println!("Your print will finish at {}:{}.", end_time[0], end_time[1]);
